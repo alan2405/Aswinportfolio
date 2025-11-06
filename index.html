@@ -1,0 +1,1048 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswin P - Senior Software Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .header .title {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .summary {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .experience-item, .project-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .experience-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title, .project-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .company, .duration {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .date {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .tech-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        
+        .description {
+            color: #555;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .skill-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #764ba2;
+            font-weight: bold;
+        }
+        
+        .education-item {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .education-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .education-details {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s;
+        }
+        
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-window {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chatbot-window.active {
+            display: flex;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chatbot-header h3 {
+            font-size: 1.1em;
+        }
+        
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9ff;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.bot {
+            justify-content: flex-start;
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message-content {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .quick-questions {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .chat-input-container {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            gap: 10px;
+        }
+        
+        .chat-input-container input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            font-size: 0.9em;
+            outline: none;
+        }
+        
+        .chat-input-container input:focus {
+            border-color: #667eea;
+        }
+        
+        .chat-input-container button {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: transform 0.2s;
+        }
+        
+        .chat-input-container button:hover {
+            transform: scale(1.05);
+        }
+        
+        .quick-actions {
+            padding: 10px 15px;
+            background: #f8f9ff;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .quick-btn {
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid #667eea;
+            border-radius: 15px;
+            color: #667eea;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .quick-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+        
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .typing-indicator {
+            display: none;
+            padding: 10px;
+        }
+        
+        .typing-indicator.active {
+            display: block;
+        }
+        
+        .typing-dots {
+            display: inline-flex;
+            gap: 4px;
+        }
+        
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+        
+        .quick-question-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #f8f9ff;
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            color: #667eea;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: all 0.3s;
+        }
+        
+        .quick-question-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .chatbot-container {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .content {
+                padding: 20px;
+            }
+            .job-header, .project-header {
+                flex-direction: column;
+            }
+            .chatbot-window {
+                width: calc(100% - 20px);
+                right: 10px;
+                left: 10px;
+                bottom: 90px;
+            }
+            .chatbot-container {
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+    
+
+
+/* ===== Floating WhatsApp Button (added) ===== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 110px; /* keep above chatbot */
+    right: 30px;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1002;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.whatsapp-float img { width: 34px; height: 34px; }
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+}
+
+/* Mobile adjustments for WhatsApp button */
+@media (max-width: 768px) {
+    .whatsapp-float { width: 50px; height: 50px; bottom: 90px; right: 15px; }
+    .whatsapp-float img { width: 26px; height: 26px; }
+}
+
+</style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadResume()">📥 Download Resume</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>ASWIN P</h1>
+            <div class="title">Senior Software Developer</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📞</span> +91 9496947422
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span> aswinpanavalappil@gmail.com
+                </div>
+                <div class="contact-item">
+                    <a href="https://wa.me/919496947422" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                        <span>💬</span> WhatsApp
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span> Thrissur, Kerala
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="summary">
+                    Senior .NET Backend Developer with 4+ years of ongoing experience specializing in enterprise-level web applications. Expert in ASP.NET Core and .NET Framework with proven success in revamping legacy systems and building scalable B2B solutions. Strong background in travel domain applications, API development, and database optimization. Demonstrated ability to modernize codebases from VB to C# while maintaining system integrity.
+                </div>
+                
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Major Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">B2B</div>
+                        <div class="stat-label">Enterprise Solutions</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <ul class="skill-list">
+                            <li>ASP.NET Core</li>
+                            <li>.NET Framework</li>
+                            <li>C#</li>
+                            <li>Visual Basic</li>
+                            <li>Web API Development</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Architecture & Design</h3>
+                        <ul class="skill-list">
+                            <li>MVC Layered Architecture</li>
+                            <li>Modular Programming</li>
+                            <li>RESTful APIs</li>
+                            <li>LINQ</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Database</h3>
+                        <ul class="skill-list">
+                            <li>MySQL</li>
+                            <li>SQL Server</li>
+                            <li>Stored Procedures</li>
+                            <li>Query Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <ul class="skill-list">
+                            <li>HTML & CSS</li>
+                            <li>JavaScript</li>
+                            <li>jQuery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="experience-item">
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Senior Software Developer</div>
+                                    <div class="company">Benzy Infotech Pvt. Ltd. | Akbar Travels</div>
+                                </div>
+                                <div class="date">July 2021 - Present (4+ Years)</div>
+                            </div>
+                            <div class="description">
+                                • Leading development and maintenance of enterprise web applications using .NET and .NET Core<br>
+                                • Successfully revamped legacy VB applications to modern C# codebase, improving performance and maintainability<br>
+                                • Implemented modular programming methods and layered architecture patterns<br>
+                                • Collaborated with cross-functional teams to deliver B2B travel booking solutions<br>
+                                • Mentored junior developers on best practices and code quality standards<br>
+                                • Ongoing work on high-traffic flight booking systems serving thousands of daily users
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="experience-item">
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Software Trainee Programmer</div>
+                                    <div class="company">EazyLearn Software Training</div>
+                                </div>
+                                <div class="date">January 2021 - July 2021</div>
+                            </div>
+                            <div class="description">
+                                • Completed intensive training in .NET development and software engineering principles<br>
+                                • Built foundational projects using ASP.NET, C#, and SQL Server<br>
+                                • Gained hands-on experience with MVC architecture and web API development
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Key Projects</h2>
+                
+                <div class="project-item">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Flight Ticket Booking Web API - B2B Platform</div>
+                            <div class="duration">Duration: 2+ Years (Ongoing) 🚀</div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-badge">ASP.NET Framework</span>
+                        <span class="tech-badge">C#</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">Web API</span>
+                        <span class="tech-badge">LINQ</span>
+                    </div>
+                    <div class="description">
+                        Architected and developed a comprehensive flight booking Web API with layered architecture for B2B agents. Implemented complex backend features including LINQ queries, stored procedures, and data transformation pipelines. Successfully integrated third-party APIs for real-time flight data and booking management. System handles high-volume transactions with optimized performance.
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Rail Revamp - IRCTC Ticket Booking Web API</div>
+                            <div class="duration">Duration: 1.3 Years</div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-badge">ASP.NET Core</span>
+                        <span class="tech-badge">C#</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">RESTful API</span>
+                    </div>
+                    <div class="description">
+                        Revamped legacy train booking system using modern ASP.NET Core framework. Built RESTful APIs for agent-based ticket booking with robust data handling and conversion mechanisms. Implemented secure payment processing and real-time seat availability tracking. Enhanced system performance through database optimization and efficient query execution.
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Vendor Management System</div>
+                            <div class="duration">Duration: 15 Days</div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-badge">ASP.NET</span>
+                        <span class="tech-badge">C#</span>
+                        <span class="tech-badge">SQL Server</span>
+                    </div>
+                    <div class="description">
+                        Developed a web-based vendor management application with full CRUD operations. Utilized various ASP.NET data controls (GridView, DetailsView, ListView, FormView) for efficient data presentation and manipulation. Implemented clean UI/UX for streamlined vendor information management.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="education-title">Bachelor of Technology (B.Tech) - Electrical & Electronics Engineering</div>
+                    <div class="education-details">Sreepathy Institute of Management & Technology | Calicut University | 2014 - 2018</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-title">Higher Secondary Education</div>
+                    <div class="education-details">DonBosco Higher Secondary School, Mannuthy | 2012 - 2014</div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    
+<!-- Floating WhatsApp Button (added) -->
+<a href="https://wa.me/9196947422" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp" rel="noopener noreferrer">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+<!-- End Floating WhatsApp Button -->
+<!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-button" onclick="toggleChat()">💬</button>
+        
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chatbot-header">
+                <h3>Ask About Aswin</h3>
+                <button class="close-chat" onclick="toggleChat()">×</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hey! I'm Aswin 👋 Feel free to ask me anything about my work, projects, or tech stack. I'm here to chat!
+                    </div>
+                </div>
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="message bot">
+                        <div class="message-content">
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-actions">
+                <button class="quick-btn" onclick="quickAsk('experience')">💼 Experience</button>
+                <button class="quick-btn" onclick="quickAsk('skills')">⚡ Skills</button>
+                <button class="quick-btn" onclick="quickAsk('projects')">🚀 Projects</button>
+                <button class="quick-btn" onclick="quickAsk('contact')">📞 Contact</button>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.classList.toggle('active');
+        }
+        
+        function addMessage(text, isUser) {
+            const chatMessages = document.getElementById('chatMessages');
+            const typingIndicator = document.getElementById('typingIndicator');
+            
+            // Remove typing indicator from DOM flow
+            typingIndicator.classList.remove('active');
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+            chatMessages.insertBefore(messageDiv, typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        function showTyping() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            typingIndicator.classList.add('active');
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+        
+        function quickAsk(topic) {
+            const questions = {
+                'experience': 'Tell me about your experience',
+                'skills': 'What are your main skills?',
+                'projects': 'Tell me about your projects',
+                'contact': 'How can I contact you?'
+            };
+            
+            const input = document.getElementById('chatInput');
+            input.value = questions[topic];
+            sendMessage();
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim().toLowerCase();
+            
+            if (!message) return;
+            
+            addMessage(input.value, true);
+            input.value = '';
+            
+            showTyping();
+            
+            setTimeout(() => {
+                const response = generateResponse(message);
+                addMessage(response, false);
+            }, 800);
+        }
+        
+        function downloadResume() {
+            window.print();
+        }
+        
+        function generateResponse(message) {
+            // Greetings
+            if (message.match(/\b(hi|hello|hey|greetings|sup|yo)\b/)) {
+                return "Hey there! 👋 I'm Aswin, a Senior .NET Developer with 4+ years of ongoing experience. What would you like to know about me?";
+            }
+            
+            // Experience related
+            if (message.match(/\b(experience|years|how long|work|career)\b/)) {
+                return "I've been working as a .NET developer for over 4 years now, and I'm still actively developing! Started my journey in January 2021 as a trainee, and I've been a Senior Developer at Benzy Infotech since July 2021. Most of my work has been on enterprise travel booking systems - pretty exciting stuff! The projects are ongoing and constantly evolving with new features.";
+            }
+            
+            // Skills and technology
+            if (message.match(/\b(skill|technology|tech stack|know|language|framework|tools)\b/)) {
+                return "I'm primarily a backend guy! My main strengths are in ASP.NET Core and .NET Framework with C#. I work a lot with MySQL and SQL Server databases. I also do MVC architecture, RESTful APIs, LINQ, and I'm comfortable with frontend stuff like HTML, CSS, and JavaScript when needed. Oh, and I've done quite a bit of legacy code migration from VB to C# too!";
+            }
+            
+            // Projects
+            if (message.match(/\b(project|work on|built|develop|created|portfolio)\b/)) {
+                return "My biggest project has been the Flight Booking Web API - been working on that for over 2 years and it's still ongoing! It's a B2B platform handling tons of bookings daily. I also revamped the entire IRCTC Rail booking system using ASP.NET Core, which took about 1.3 years. Both are pretty complex systems with real-time data processing and third-party API integrations.";
+            }
+            
+            // Flight project specific
+            if (message.match(/\b(flight|airline|booking)\b/)) {
+                return "Ah yes, the Flight Booking API! That's been my main focus and it's an ongoing project. It's a complete B2B solution built with layered architecture. We handle everything from real-time flight searches to booking confirmations. The interesting part is integrating multiple airline APIs and managing high-volume transactions. Built it using ASP.NET Framework with MySQL, lots of LINQ and stored procedures for optimization.";
+            }
+            
+            // Rail project specific
+            if (message.match(/\b(rail|train|irctc)\b/)) {
+                return "The Rail Revamp project was really interesting! We completely modernized the old IRCTC booking system using ASP.NET Core. Added features like real-time seat availability, secure payment processing, and made the whole system way more performant. It was challenging but super rewarding to see it all come together!";
+            }
+            
+            // Education
+            if (message.match(/\b(education|study|college|degree|university|qualification)\b/)) {
+                return "I did my B.Tech in Electrical & Electronics Engineering from Sreepathy Institute under Calicut University (2014-2018). After that, I jumped into software development through intensive training at EazyLearn, and honestly, I haven't looked back since!";
+            }
+            
+            // Location
+            if (message.match(/\b(location|where|place|based|from|live)\b/)) {
+                return "I'm from Thrissur, Kerala - beautiful place! 🌴 Currently working remotely for Benzy Infotech, which gives me the flexibility to work from home while contributing to exciting projects.";
+            }
+            
+            // Contact
+            if (message.match(/\b(contact|reach|email|phone|whatsapp|call|connect)\b/)) {
+                return "Sure! You can reach me at +91 9496947422 or email me at aswinpanavalappil@gmail.com. I'm also available on WhatsApp - just click the WhatsApp link in my contact section above! I usually respond pretty quickly. 😊";
+            }
+            
+            // Company
+            if (message.match(/\b(company|akbar|benzy|employer|organization|workplace)\b/)) {
+                return "I work at Benzy Infotech, and we handle projects for Akbar Travels - one of India's leading travel companies. It's been great working on large-scale travel booking systems that thousands of people use daily! The ongoing nature of these projects keeps things interesting.";
+            }
+            
+            // Database
+            if (message.match(/\b(database|sql|mysql|query|stored procedure|data)\b/)) {
+                return "I work extensively with both MySQL and SQL Server. A lot of my work involves writing optimized queries, stored procedures, and database architecture. Performance optimization is something I really focus on, especially when dealing with high-volume booking data. Efficient data handling is crucial in our travel booking systems!";
+            }
+            
+            // API related
+            if (message.match(/\b(api|web api|rest|integration|endpoint)\b/)) {
+                return "APIs are my bread and butter! 🍞 I've built multiple RESTful Web APIs from scratch. Most of my work involves integrating third-party APIs (like airline and railway systems) and building our own APIs for B2B clients. I handle everything from authentication to data transformation and error handling.";
+            }
+            
+            // Architecture
+            if (message.match(/\b(architecture|design|pattern|structure|layer)\b/)) {
+                return "I'm a big believer in clean architecture. I work with MVC layered architecture and modular programming patterns. It makes the code maintainable and scalable. When I revamped our systems, proper architecture was key to making everything work smoothly and handle future requirements.";
+            }
+            
+            // Challenges
+            if (message.match(/\b(challenge|difficult|problem|issue|tough|hard)\b/)) {
+                return "One of the biggest challenges was migrating legacy VB code to C# while keeping everything running smoothly in production. Also, handling real-time booking with multiple concurrent users requires careful transaction management and optimization. But honestly, these challenges are what make the job interesting! Each problem solved makes you a better developer.";
+            }
+            
+            // Strengths
+            if (message.match(/\b(strength|good at|best|excel|expertise)\b/)) {
+                return "I'd say my strengths are in backend development and system optimization. I really enjoy solving complex data problems and making systems run faster. I'm also pretty good at understanding legacy code and modernizing it without breaking things! Plus, I love mentoring junior developers.";
+            }
+            
+            // Learning
+            if (message.match(/\b(learn|learning|new|future|next|grow)\b/)) {
+                return "I'm always learning! 📚 Currently diving deeper into microservices architecture and cloud technologies. The tech world moves fast, so I make it a point to stay updated with the latest .NET features and best practices. Continuous learning is essential in our field!";
+            }
+            
+            // Hiring/Availability
+            if (message.match(/\b(available|hire|job|opportunity|looking|open|position)\b/)) {
+                return "I'm always open to discussing interesting opportunities! If you have something exciting in the backend/.NET space, feel free to reach out. You can contact me via phone or email - details are right there in my resume header! Let's chat about how I can contribute to your team.";
+            }
+            
+            // Teamwork
+            if (message.match(/\b(team|collaborate|work with|colleague)\b/)) {
+                return "I work closely with cross-functional teams - from project managers to frontend developers. I also mentor junior developers and help them with code reviews and best practices. Collaboration is key in building great software! I believe in sharing knowledge and growing together as a team.";
+            }
+            
+            // Achievements
+            if (message.match(/\b(achieve|achievement|accomplish|success|proud)\b/)) {
+                return "One of my proudest achievements is successfully revamping the entire flight booking system while maintaining zero downtime. Also, the fact that systems I've built handle thousands of bookings daily and have been running smoothly for 2+ years - that's pretty satisfying! 🚀";
+            }
+            
+            // Thank you
+            if (message.match(/\b(thank|thanks|appreciate|awesome|great|cool)\b/)) {
+                return "You're welcome! Happy to help. Feel free to ask if you have any other questions about my work or experience! Always here to chat. 😊";
+            }
+            
+            // Why .NET
+            if (message.match(/\b(why|chose|choose)\b.*\b(net|dotnet|c#|csharp)\b/)) {
+                return "Great question! I started with .NET during my training and really fell in love with how powerful and versatile it is. C# is elegant, the ecosystem is robust, and you can build pretty much anything. Plus, there's always something new to learn with .NET Core evolving so rapidly!";
+            }
+            
+            // Work style
+            if (message.match(/\b(work style|approach|methodology|process)\b/)) {
+                return "I follow agile methodologies and believe in clean, well-documented code. I'm big on code reviews, testing, and continuous improvement. My approach is to understand the problem deeply first, then architect a solution that's both efficient and maintainable. Quality over speed, always!";
+            }
+            
+            // Default responses based on tone
+            if (message.match(/\?$/)) {
+                return "That's an interesting question! Could you be more specific? You can ask me about my experience, projects, skills, achievements, or anything else you'd like to know! I'm happy to share. 💬";
+            }
+            
+            // Default friendly response
+            return "Hmm, I'm not sure I got that completely. But hey, ask me about my projects, tech skills, experience, achievements, or how to get in touch - I'd be happy to share! You can also use the quick buttons below for common questions. 😊";
+        }
+    </script>
+</body>
+</html>
